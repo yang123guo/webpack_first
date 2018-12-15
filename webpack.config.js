@@ -1,15 +1,24 @@
 // 引入html-webpack-plugin插件
-import htmlWebpackPlugin from 'html-webpack-plugin';
+const htmlWebpackPlugin = require('html-webpack-plugin');
 // 引入path模块
-import path from 'path';
+const path = require('path');
 
-export default {
+module.exports = {
     // 入口
-    entry: {},
+    entry: {
+        index: './src/index.js'
+    },
     // 出口
-    output: {},
+    output: {
+        path: path.resolve(__dirname, '/dist'),
+        filename: '[name].js' 
+    },
     // 插件
     plugins: [
-        
+        new htmlWebpackPlugin({
+            // filename: 'index.html',
+            // template: 'index.html',
+            // inject: 'head',
+        })
     ]
 }
