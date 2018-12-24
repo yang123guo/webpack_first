@@ -16,9 +16,9 @@ module.exports = {
     // 插件
     plugins: [
         new htmlWebpackPlugin({
-            // filename: 'index.html',
-            // template: 'index.html',
-            // inject: 'head',
+            filename: 'index.html',
+            template: 'index.html',
+            inject: true,
         })
     ]
 }
