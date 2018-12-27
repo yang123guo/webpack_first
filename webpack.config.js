@@ -16,11 +16,11 @@ module.exports = {
     // 插件
     plugins: [
         new htmlWebpackPlugin(
-        //     {
-        //     filename: 'index.html',
-        //     template: 'index.html',
-        //     inject: true,
-        // }
+            {
+                filename: 'index.html',
+                template: path.join(__dirname, 'src/index.html'),
+                inject: true,
+        }
         )
     ]
 }
