@@ -10,15 +10,17 @@ module.exports = {
     },
     // 出口
     output: {
-        path: path.resolve(__dirname, '/dist'),
+        path: path.join(__dirname, 'dist'),
         filename: '[name].js' 
     },
     // 插件
     plugins: [
-        new htmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            inject: true,
-        })
+        new htmlWebpackPlugin(
+        //     {
+        //     filename: 'index.html',
+        //     template: 'index.html',
+        //     inject: true,
+        // }
+        )
     ]
 }
