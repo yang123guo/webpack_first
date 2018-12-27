@@ -16,9 +16,11 @@ module.exports = {
     // 插件
     plugins: [
         new htmlWebpackPlugin(
-            {
-                filename: 'index.html',
-                template: path.join(__dirname, 'src/index.html'),
+            {   
+                // 生成的目标文件文件名 
+                filename: 'home.html', 
+                // 需要套用的（插入的模板文件），如果没有那么插件给自动生成一个html
+                template: path.join(__dirname, 'src/index.html'),  
                 inject: true,
         }
         )
