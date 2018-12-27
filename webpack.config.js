@@ -17,6 +17,32 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: '[name].js' 
     },
+    // loader解析器
+    module: {
+        rules: [
+            // {
+            //     test: /\.less$/,
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: 'style-loader',
+            //         use: [
+            //             'css-loader',
+            //             'autoprefixer-loader',
+            //             'less-loader'
+            //         ]
+            //     })
+            // }
+
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    // 编译后用什么loader来提取css文件
+                    fallback: "style-loader",  
+                    // 指需要什么样的loader去编译文件,这里由于源文件是.css所以选择css-loader
+                    use: "css-loader"
+                })
+            }
+        ]
+    },
     // 插件
     plugins: [
         new htmlWebpackPlugin({   
@@ -47,7 +73,7 @@ module.exports = {
                 favicon: './assets/images/favicon.png'
         }),
         // css分离
-        // new ExtractTextPlugin('style.css'),
+        new ExtractTextPlugin("styles.css"),
         // 删除文件 保留新文件
         new CleanWebpackPlugin(['dist'])
     ]
