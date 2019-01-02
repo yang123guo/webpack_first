@@ -101,18 +101,18 @@ console.log('当前环境是开发环境吗？：', devMode ,  'env.mode是什�
             new CleanWebpackPlugin(['dist'])
         ],
 
-        // optimization: {
-        //     minimizer: [
-        //         new UglifyJsPlugin({
-        //             // cache: true,
-        //             // parallel: true,
-        //             // sourcMap: true
-        //         }),
-        //         new OptimizeCSSAssetsPlugin({
+        optimization: {
+            minimizer: [
+                new UglifyJsPlugin({
+                    // cache: true,
+                    // parallel: true,
+                    // sourcMap: true
+                }),
+                new OptimizeCSSAssetsPlugin({
                     
-        //         }),
-        //     ],
-        // }
+                }),
+            ],
+        }
     };
    
 }
